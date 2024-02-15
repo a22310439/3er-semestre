@@ -89,7 +89,7 @@ public:
             temp = temp->next;
         }
         cout << endl;
-    }
+    }    
 
     ~List() {
         Node<t>* temp = head;
@@ -131,6 +131,7 @@ void funcionLista(int opcion, List<t>& list) {
                 break;
             }
             case 0: {
+                cout << "Regresando al menu principal\n\n";
                 break;
             }
         }
@@ -138,31 +139,33 @@ void funcionLista(int opcion, List<t>& list) {
 }
 
 int main() {
-    int opcion;
-    cout << "De que tipo va a ser la lista?\n1) Numeros enteros\n2) Numeros con decimales\n3) Caracteres\n\nOpcion: ";
-    cin >> opcion;
-    //checar que opcion ea un numero entero
-    while (opcion < 1 || opcion > 3) {
-        cin.clear();
-        cin.ignore();
-        cout << "\nOpcion no valida, intentalo de nuevo: ";
+    int opcion = 1;
+    while (opcion != 0){
+        cout << "De que tipo va a ser la lista?\n1) Numeros enteros\n2) Numeros con decimales\n3) Caracteres\n\nOpcion: ";
         cin >> opcion;
-    }
-    switch (opcion) {
-        case 1: {
-            List<int> list;
-            funcionLista(opcion, list);
-            break;
+        while (opcion < 1 || opcion > 3) {
+            cin.clear();
+            cin.ignore();
+            cout << "\nOpcion no valida, intentalo de nuevo: ";
+            cin >> opcion;
         }
-        case 2: {
-            List<float> list;
-            funcionLista(opcion, list);
-            break;
-        }
-        case 3: {
-            List<char> list;
-            funcionLista(opcion, list);
-            break;
+        switch (opcion) {
+            case 1: {
+                List<int> list;
+                
+                funcionLista(opcion, list);
+                break;
+            }
+            case 2: {
+                List<float> list;
+                funcionLista(opcion, list);
+                break;
+            }
+            case 3: {
+                List<char> list;
+                funcionLista(opcion, list);
+                break;
+            }
         }
     }
     return 0;
