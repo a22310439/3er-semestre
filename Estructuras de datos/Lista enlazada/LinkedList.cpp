@@ -25,7 +25,7 @@ private:
     int size;
 public:
     List<t>() {
-        head = NULL;
+        head = nullptr;
         size = 0;
     }
     //Verificar el tamaño de la lista
@@ -126,6 +126,16 @@ public:
         }
         return suma;
     }
+    //Overload del operador float
+    operator float() {
+        float suma = 0;
+        Node<t>* temp = head;
+        while(temp != nullptr) {
+            suma += temp->value;
+            temp = temp->next;
+        }
+        return suma;
+    }
     //Overload del operador ++
     List operator ++() {
         Node<t>* temp = head;
@@ -136,23 +146,23 @@ public:
         return *this;
     }
     //Overload del operador - (int)
-    List operator -(int valor) {     //Restar un valor a todos los elementos de la lista<int>
+    List operator +(int valor) {     //Restar un valor a todos los elementos de la lista<int>
         Node<t>* temp = head;
         while(temp != nullptr) {
-            temp->value -= valor;
+            temp->value += valor;
             temp = temp->next;
         }
         return *this;
     }
     //Overload del operador - (float)
-    List operator -(float valor) {   //Restar un valor a todos los elementos de la lista<float>
+    List operator +(float valor) {   //Restar un valor a todos los elementos de la lista<float>
         if(valor < 0) {
             cout << "El valor no puede ser negativo." << endl;
             return *this;
         }
         Node<t>* temp = head;
         while(temp != nullptr) {
-            temp->value -= valor;
+            temp->value += valor;
             temp = temp->next;
         }
         return *this;
@@ -208,7 +218,8 @@ void menuCaracteres(List<t>& list) {
                 "3) Insertar un valor en una posicion dada\n" <<
                 "4) Eliminar un valor\n" <<
                 "5) Imprimir la lista\n" <<
-                "0) Salir\n\nOpcion: ";
+                "0) Regresar al menu principal\n\n" <<
+                "Opcion: ";
         cin >> opcion;
         validarOpcion(opcion, 5);
         switch (opcion) {
@@ -247,7 +258,19 @@ void menuCaracteres(List<t>& list) {
                 break;
             }
             case EXIT_CODE: {
-                cout << "\nRegresando al menu principal\n\n";
+                string respuesta;
+                cout << "\nLa lista sera eliminada, ¿Regresar al menu principal? (si/no): ";
+                cin >> respuesta;
+                cout << endl;
+                while(respuesta != "si" && respuesta != "no") {
+                    cout << "\nRespuesta no valida, intentalo de nuevo: ";
+                    cin >> respuesta;
+                }
+                if(respuesta == "si"){
+                    cout << "\nRegresando al menu principal\n\n";
+                    break;
+                }
+                opcion++;
                 break;
             }
         }
@@ -265,12 +288,12 @@ void menuNumeros(List<t>& list) {
                 "4) Eliminar un valor\n" <<
                 "5) Imprimir todos los valores de la lista sumados\n" <<
                 "6) Sumar 1 a todos los valores de la lista\n" <<
-                "7) Restar un valor a todos los elementos de la lista\n" <<
+                "7) Sumar un valor a todos los elementos de la lista\n" <<
                 "8) Imprimir la lista\n" <<
                 "0) Salir\n\n" <<
                 "Opcion: ";
         cin >> opcion;
-        validarOpcion(opcion, 6);
+        validarOpcion(opcion, 8);
         switch (opcion) {
             case 1: {
                 cout << "\nIngresa el valor a agregar: ";
@@ -309,7 +332,7 @@ void menuNumeros(List<t>& list) {
                 if(list.listaVacia()){
                     break;
                 }
-                cout << "\nLa suma de todos los valores de la lista es: " << int(list) << endl;
+                cout << "\nLa suma de todos los valores de la lista es: " << t(list) << endl;
                 break;
             }
             case 6: {
@@ -317,16 +340,18 @@ void menuNumeros(List<t>& list) {
                     break;
                 }
                 ++list;
+                cout << "\nSe ha sumado 1 a todos los valores de la lista" << endl;
                 break;
             }
             case 7: {
                 if(list.listaVacia()){
                     break;
                 }
-                cout << "\nIngresa el valor a restar: ";
+                cout << "\nIngresa el valor a sumar: ";
                 cin >> valor;
                 validarValor(valor);
-                list - valor;
+                list + valor;
+                cout << "\nSe ha sumado " << valor << " a todos los valores de la lista" << endl;
                 break;
             }
             case 8: {
@@ -334,7 +359,19 @@ void menuNumeros(List<t>& list) {
                 break;
             }
             case EXIT_CODE: {
-                cout << "\nRegresando al menu principal\n\n";
+                string respuesta;
+                cout << "\nLa lista sera eliminada, ¿Regresar al menu principal? (si/no): ";
+                cin >> respuesta;
+                cout << endl;
+                while(respuesta != "si" && respuesta != "no") {
+                    cout << "\nRespuesta no valida, intentalo de nuevo: ";
+                    cin >> respuesta;
+                }
+                if(respuesta == "si"){
+                    cout << "\nRegresando al menu principal\n\n";
+                    break;
+                }
+                opcion++;
                 break;
             }
         }
@@ -353,7 +390,7 @@ int main() {
             "0) Salir\n\n" <<
             "Opcion: ";
         cin >> opcion;
-        validarOpcion(opcion, 3);
+        validarOpcion(opcion, 4);
 
         switch (opcion) {
             case 1: {
