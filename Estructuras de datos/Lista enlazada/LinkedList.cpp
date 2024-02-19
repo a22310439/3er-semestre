@@ -111,7 +111,10 @@ public:
         Node<t>* temp = head;
         cout << endl;
         while (temp != nullptr) {
-            cout << temp->value << " - ";
+            cout << temp->value;
+            if(temp->next != nullptr) {
+                cout << " -> ";
+            }
             temp = temp->next;
         }
         cout << endl;
@@ -136,8 +139,21 @@ public:
         }
         return suma;
     }
+    //Overload del operador string
+    operator string() {
+        string suma = "";
+        Node<t>* temp = head;
+        while(temp != nullptr) {
+            suma += temp->value;
+            if(temp->next != nullptr) {
+                suma += ", ";
+            }
+            temp = temp->next;
+        }
+        return suma;
+    }
     //Overload del operador ++
-    List operator ++() {
+    List& operator ++() {
         Node<t>* temp = head;
         while(temp != nullptr) {
             temp->value++;
@@ -146,27 +162,26 @@ public:
         return *this;
     }
     //Overload del operador - (int)
-    List operator +(int valor) {     //Restar un valor a todos los elementos de la lista<int>
+    List operator+(int valor) { //Sumar un valor (int) a todos los elementos de la lista
+        List result;
         Node<t>* temp = head;
-        while(temp != nullptr) {
-            temp->value += valor;
+        while (temp != nullptr) {
+            result.append(temp->value + valor);
             temp = temp->next;
         }
-        return *this;
+        return result;
     }
     //Overload del operador - (float)
-    List operator +(float valor) {   //Restar un valor a todos los elementos de la lista<float>
-        if(valor < 0) {
-            cout << "El valor no puede ser negativo." << endl;
-            return *this;
-        }
+    List operator+(float valor) { //Sumar un valor (float) a todos los elementos de la lista
+        List result;
         Node<t>* temp = head;
-        while(temp != nullptr) {
-            temp->value += valor;
+        while (temp != nullptr) {
+            result.append(temp->value + valor);
             temp = temp->next;
         }
-        return *this;
+        return result;
     }
+
     //Verificar si la lista está vacía
     bool listaVacia() {
         if(head == nullptr) {
@@ -247,14 +262,18 @@ void menuCaracteres(List<t>& list) {
                 break;
             }
             case 4: {
-                cout << "\nIngresa la posicion a eliminar: ";
+                cout << "\nIngresa la posicion a eliminar (Ingresa -1 para cancelar): ";
                 cin >> posicion;
+                if(posicion == -1) {
+                    cout << "\nCancelando eliminacion" << endl;
+                    break;
+                }
                 validarValor(posicion);
                 list.remove(posicion);
                 break;
             }
             case 5: {
-                list.print();
+                cout << string(list) << endl;
                 break;
             }
             case EXIT_CODE: {
@@ -284,7 +303,7 @@ void menuNumeros(List<t>& list) {
     do {
         cout << "\n1) Agregar un valor al inicio de la lista\n" <<
                 "2) Agregar un valor al final de la lista\n" <<
-                "3) Insertar un valor en uan posicion dada\n" <<
+                "3) Insertar un valor en una posicion dada\n" <<
                 "4) Eliminar un valor\n" <<
                 "5) Imprimir todos los valores de la lista sumados\n" <<
                 "6) Sumar 1 a todos los valores de la lista\n" <<
@@ -385,12 +404,11 @@ int main() {
         cout << "De que tipo va a ser la lista?\n" <<
             "1) Numeros enteros\n" <<
             "2) Numeros con decimales\n" <<
-            "3) Caracteres\n" <<
-            "4) Cadenas de texto\n"
+            "3) Cadenas de texto\n"
             "0) Salir\n\n" <<
             "Opcion: ";
         cin >> opcion;
-        validarOpcion(opcion, 4);
+        validarOpcion(opcion, 3);
 
         switch (opcion) {
             case 1: {
@@ -404,11 +422,6 @@ int main() {
                 break;
             }
             case 3: {
-                List<char> list;
-                menuCaracteres<char>(list);
-                break;
-            }
-            case 4: {
                 List<string> list;
                 menuCaracteres<string>(list);
                 break;
