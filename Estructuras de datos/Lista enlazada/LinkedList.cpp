@@ -1,4 +1,9 @@
+// Ordenar en archivos (headers)
+// 
 #include <iostream>
+
+template <typename t>
+void validarValor(t& valor);
 
 using namespace std;
 
@@ -156,30 +161,28 @@ public:
     List& operator ++() {
         Node<t>* temp = head;
         while(temp != nullptr) {
-            temp->value++;
+            temp->value += 1;
             temp = temp->next;
         }
         return *this;
     }
     //Overload del operador - (int)
-    List operator+(int valor) { //Sumar un valor (int) a todos los elementos de la lista
-        List result;
+    List operator +=(int valor) { //Sumar un valor (int) a todos los elementos de la lista
         Node<t>* temp = head;
         while (temp != nullptr) {
-            result.append(temp->value + valor);
+            temp->value += valor;
             temp = temp->next;
         }
-        return result;
+        return *this;
     }
     //Overload del operador - (float)
-    List operator+(float valor) { //Sumar un valor (float) a todos los elementos de la lista
-        List result;
+    List operator+=(float valor) { //Sumar un valor (float) a todos los elementos de la lista
         Node<t>* temp = head;
         while (temp != nullptr) {
-            result.append(temp->value + valor);
+            temp->value += valor;
             temp = temp->next;
         }
-        return result;
+        return *this;
     }
 
     //Verificar si la lista está vacía
@@ -206,7 +209,7 @@ template <typename t>
 void validarValor(t& valor){
     while(cin.fail()) {
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         cout << "\nValor no valido, intentalo de nuevo: ";
         cin >> valor;
     }
@@ -216,7 +219,7 @@ void validarValor(t& valor){
 void validarOpcion(int& opcion, int max) {
     while(cin.fail() || opcion < 0 || opcion > max) {
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         cout << "\nOpcion no valida, intentalo de nuevo: ";
         cin >> opcion;
     }
@@ -369,7 +372,7 @@ void menuNumeros(List<t>& list) {
                 cout << "\nIngresa el valor a sumar: ";
                 cin >> valor;
                 validarValor(valor);
-                list + valor;
+                list += valor;
                 cout << "\nSe ha sumado " << valor << " a todos los valores de la lista" << endl;
                 break;
             }
