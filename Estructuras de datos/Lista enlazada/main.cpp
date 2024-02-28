@@ -2,6 +2,7 @@
 #include "List.h"
 #include "Menu.h"
 #include "Validador.h"
+#include "BTree.h"
 
 using namespace std;
 

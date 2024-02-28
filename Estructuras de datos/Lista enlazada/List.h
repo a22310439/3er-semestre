@@ -12,13 +12,19 @@ private:
     Node<t>* head;
     int size;
 public:
+    //Constructor
     List(){
         validador = Validador<t>();
         head = nullptr;
         size = 0;
     }
+    //Obtener el validador
     Validador<t>& getValidador(){
         return validador;
+    }
+    //Obtener el primer nodo
+    Node<t>* getHead(){
+        return head;
     }
     //Verificar el tamaño de la lista
     int getSize(){
@@ -158,7 +164,6 @@ public:
         Node<t>* temp = head;
         while (temp != nullptr) {
             temp->setValue(temp->getValue() + valor);
-            cout << temp->getValue() << endl;
             temp = temp->getNext();
         }
         return *this;

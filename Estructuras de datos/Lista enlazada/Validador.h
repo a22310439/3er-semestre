@@ -15,7 +15,7 @@ public:
         }
     }
     // Validar que la opción ingresada sea del tipo correcto
-    void validarOpcion(int opcion, int max) {
+    void validarOpcion(int& opcion, int max) {
         validarValor(opcion);
         while(opcion < 0 || opcion > max) {
             std::cout << "\nOpcion no valida, intentalo de nuevo: ";

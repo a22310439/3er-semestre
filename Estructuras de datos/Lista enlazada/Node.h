@@ -1,20 +1,21 @@
 #pragma once
 #include <iostream>
 
-template <typename T>
+template <typename t>
 class Node {
 private:
-    T value;
+    t value;
     Node* next = nullptr;
 public:
 
     Node() = default;
-    Node(T value, Node* next = nullptr) : value(value), next(next) {}
+    Node(t value, Node* next = nullptr) : value(value), next(next) {}
+    
 
-    void setValue(T value){
+    void setValue(t value){
         this->value = value;
     }
-    T getValue() const { 
+    t getValue() const { 
         return value; 
     }
 
