@@ -1,0 +1,188 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0)
+}
+
+/* HEADER */
+header {
+    background-color: #001f3f;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+div{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0%;
+}
+
+/* NAV */
+nav {
+    background: #333;
+}
+
+nav#menu {
+    text-align: center;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    background: #393939;
+}
+
+#menu ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #393939;
+    transition: background-color 0.3s;
+}
+
+#menu ul li a:hover {
+    background-color: #000000;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #000000;
+}
+
+/* SECTION */
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+section ul li {
+    margin-right: 10px;
+}
+
+/* ARTICLE */
+article {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* MAIN */
+main {
+    padding: 15px;
+}
+
+/* ASIDE */
+aside {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+#destinos-recomendados {
+    text-align: center;
+    padding: 20px;
+}
+
+.destinos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.destino {
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.destino img {
+    max-width: 100%;
+    height: auto;
+}
+
+.destino h3 {
+    margin: 10px 0;
+}
+
+.destino p {
+    padding: 0 10px;
+}
+
+.destino a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .destino {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .destino {
+        width: 100%;
+    }
+}
