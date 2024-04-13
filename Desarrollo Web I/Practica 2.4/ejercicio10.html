@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/formulario.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><img src="imagenes/logoceti.png" alt="Logo CETI" width="10%">Ejercicio 10</h1>
+    </header>
+    <form id="registrationForm">
+        <input type="text" id="username" placeholder="Nombre Usuario" required>
+        <input type="text" id="fullname" placeholder="Nombre Completo" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <input type="password" id="confirmPassword" placeholder="Repetir Contraseña" required>
+        <input type="email" id="email" placeholder="Correo Electrónico" required>
+        <div>
+            Sexo:
+            <label><input type="radio" name="sex" value="male" required> Masculino</label>
+            <label><input type="radio" name="sex" value="female" required> Femenino</label>
+        </div>
+        <div>
+            Hobbies:
+            <label><input type="checkbox" name="hobbies" value="sports"> Deportes</label>
+            <label><input type="checkbox" name="hobbies" value="reading"> Lectura</label>
+            <label><input type="checkbox" name="hobbies" value="traveling"> Viajar</label>
+        </div>
+        <select id="maritalStatus" required>
+            <option value="">Estado Civil</option>
+            <option value="single">Soltero(a)</option>
+            <option value="married">Casado(a)</option>
+            <option value="other">Otro</option>
+        </select>
+        <input type="text" id="street" placeholder="Calle" required>
+        <input type="text" id="interiorNumber" placeholder="Numero Interior">
+        <input type="text" id="colony" placeholder="Colonia" required>
+        <input type="text" id="state" placeholder="Estado" required>
+        <input type="text" id="country" placeholder="País" required>
+        <input type="text" id="postalCode" placeholder="CP" required>
+        <div>
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+    <footer>
+        <h2>Jesús Alberto Aréchiga Carrillo - 22310439</h2>
+        <h3>Centro de Enseñanza Técnica Industrial</h3>
+        <div>
+            <a href="index.html" class="button">Ir al inicio</a>
+        </div>
+    </footer>
+</body>
+</html>
