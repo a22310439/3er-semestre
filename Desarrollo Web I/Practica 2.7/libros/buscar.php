@@ -2,12 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Buscar Usuario</title>
+        <title>Bases de datos y MySQL - Buscar Libro</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Buscar Usuario</h1>
+            <h1>Bases de datos y MySQL - Buscar Libro</h1>
         </div>
         <div id="menu">
             <ul>
@@ -23,12 +23,12 @@
                 }
 
                 //2.- obteniendo los datos del formulario
-                $clave = $_REQUEST["clave"];
+                $id = $_REQUEST["id"];
 
                 //validando el campo
-                if (isset($clave)) {
+                if (isset($id)) {
                     // Creando la consulta
-                    $sql = "SELECT nombre FROM usuarios WHERE clave = $clave";
+                    $sql = "SELECT titulo FROM libros WHERE id = $id";
                 
                     // Ejecutando la consulta
                     $result = $link->query($sql);
@@ -39,8 +39,8 @@
                         if ($result->num_rows > 0) {
                             // Obtener el primer registro (suponiendo que solo esperas un resultado)
                             $row = $result->fetch_assoc();
-                            $nombre = $row['nombre'];
-                            echo "<p>Usuario:</p>";
+                            $titulo = $row['titulo'];
+                            echo "<p>Libro: $titulo</p>";
                         }
                     } else {
                         // Si hubo algún error en la consulta
@@ -49,7 +49,7 @@
                 
                     // Cerrar la conexión a la base de datos
 
-                    $sql = "SELECT dir FROM usuarios WHERE clave = $clave";
+                    $sql = "SELECT isbn FROM libros WHERE id = $id";
                     
                     // Ejecutando la consulta
                     $result = $link->query($sql);
@@ -60,13 +60,13 @@
                         if ($result->num_rows > 0) {
                             // Obtener el primer registro (suponiendo que solo esperas un resultado)
                             $row = $result->fetch_assoc();
-                            $dir = $row['dir'];
+                            $isbn = $row['isbn'];
                         }
                     } else {
                         // Si hubo algún error en la consulta
                         die('Consulta no válida: ' . $link->error);
                     }
-                    $sql = "SELECT telefono FROM usuarios WHERE clave = $clave";
+                    $sql = "SELECT autor FROM libros WHERE id = $id";
                     
                     // Ejecutando la consulta
                     $result = $link->query($sql);
@@ -77,7 +77,24 @@
                         if ($result->num_rows > 0) {
                             // Obtener el primer registro (suponiendo que solo esperas un resultado)
                             $row = $result->fetch_assoc();
-                            $telefono = $row['telefono'];
+                            $autor = $row['autor'];
+                        }
+                    } else {
+                        // Si hubo algún error en la consulta
+                        die('Consulta no válida: ' . $link->error);
+                    }
+                    $sql = "SELECT disponible FROM libros WHERE id = $id";
+                    
+                    // Ejecutando la consulta
+                    $result = $link->query($sql);
+                
+                    // Validando la consulta
+                    if ($result) {
+                        // Verificando si se encontraron resultados
+                        if ($result->num_rows > 0) {
+                            // Obtener el primer registro (suponiendo que solo esperas un resultado)
+                            $row = $result->fetch_assoc();
+                            $disponible = $row['disponible'];
                         }
                     } else {
                         // Si hubo algún error en la consulta
@@ -88,27 +105,30 @@
             ?>
         <div id="contenido">
             <form action="buscar.html" method="get">
-                <p>Corrobore la información a cambiar:</p>
+                <p>Libro:</p>
 
                 <?php
                     echo "<table>
                         <tbody>
                             <tr>
-                                <td>Nombre:</td>
+                                <td>Titulo:</td>
                                 <td>
-                                    <input type='text' name='nombre' size='40' maxlength='40' disabled='true' value='$nombre' required/>
+                                    <input type='text' name='titulo' size='40' maxlength='40' disabled='true' value='$titulo' required/>
+                                </td>
+                                <td>ISBN:</td>
+                                <td>
+                                    <input type='text' name='isbn' size='15' maxlength='40' disabled='true' value='$isbn' required/>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Direcci&oacute;n:</td>
+                                <td>Autor:</td>
                                 <td>
-                                    <input type='text' name='direccion' size='60' maxlength='40' disabled='true' value='$dir' required/>
+                                    <input type='text' name='autor' size='40' maxlength='15' disabled='true' value='$autor' required/>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Telefono</td>
+                                <td>Disponible</td>
                                 <td>
-                                    <input type='text' name='telefono' size='15' maxlength='15' disabled='true' value='$telefono' required/>
+                                <input type='text' name='disponible' size='15' maxlength='15' disabled='true' value='".($disponible == 1 ? 'Si' : 'No')."' required/>
+
                                 </td>
                             </tr>
                         </tbody>

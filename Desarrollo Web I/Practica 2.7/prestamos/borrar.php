@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Borrar Usuario</title>
+        <title>Bases de datos y MySQL - Borrar Prestamo</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Borrar Usuario</h1>
+            <h1>Bases de datos y MySQL - Borrar Prestamo</h1>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
+                <li><a href="prestamos.html">P&aacute;gina inicial</a></li>
             </ul>
             <?php
                 include '../conexion.php';
@@ -22,18 +22,18 @@
                 }
 
                 //2.- obteniendo los datos del formulario
-                $clave = $_REQUEST["clave"];
+                $id = $_REQUEST["id"];
 
                 //validando el campo
-                if (isset($clave)) {
+                if (isset($id)) {
                     //creando la consulta
-                    $sql = "DELETE FROM usuarios WHERE clave = $clave";
+                    $sql = "DELETE FROM prestamos WHERE id = $id";
                     //echo $sql;
                     //4.- ejecutando la consulta
                     $result = $link->query($sql);
                     //5.- validando la consulta
                     if ($link->affected_rows > 0) {
-                    echo "El usuario se ha eliminado de forma correcta.\n";
+                    echo "El prestamo se ha eliminado de forma correcta.\n";
                     } else {
                     die('Consulta no v&aacute;lida: ' . $link->error);
                     }

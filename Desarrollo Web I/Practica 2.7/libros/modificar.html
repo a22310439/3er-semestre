@@ -2,34 +2,34 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Buscar Usuario</title>
+        <title>Bases de datos y MySQL - Modificar Libro</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Buscar Usuario</h1>
+            <h1>Bases de datos y MySQL - Modificar Libro</h1>
         </div>
         <div id="menu">
         <ul>
-            <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
+            <li><a href="libros.html">P&aacute;gina inicial</a></li>
         </ul>
         </div>
         <div id="contenido">
-            <form action="buscar.php" method="get">
-                <p>Escriba la clave del registro a buscar</p>
+            <form action="infoModificar.php" method="get">
+                <p>Escriba el ID del libro a modificar:</p>
                 <table>
                     <tbody>
                         <tr>
-                            <td>Clave:</td>
+                            <td>ID:</td>
                             <td>
-                                <input type="text" name="clave" size="40" maxlength="10" required/>
+                                <input type="text" name="id" size="40" maxlength="10" required/>
+                            </td>
+                            <td>
+                                <input type="submit" value="Buscar">
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p>
-                <input type="submit" value="Buscar" />
-                </p>
             </form>
         </div>
         <div id="pie">

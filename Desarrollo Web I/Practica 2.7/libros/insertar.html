@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Agregar Usuario</title>
+        <title>Bases de datos y MySQL - Agregar Libro</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Agregar Usuario</h1>
+            <h1>Bases de datos y MySQL - Agregar Libro</h1>
         </div>
         <div id="menu">
         <ul>
-            <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
+            <li><a href="libros.html">P&aacute;gina inicial</a></li>
         </ul>
         </div>
         <div id="contenido">
@@ -24,19 +24,26 @@
                             <td>
                                 <input type="text" name="clave" size="40" maxlength="10" required/>
                             </td> -->
-                            <td>Nombre:</td>
+                            <td>T&iacute;tulo:</td>
                             <td>
-                                <input type="text" name="nombre" size="40" maxlength="40" required/>
+                                <input type="text" name="titulo" size="40" maxlength="40" required/>
+                            </td>
+                            <td>Autor:</td>
+                            <td>
+                                <input type="text" name="autor" size="40" maxlength="60" required/>
                             </td>
                         </tr>
                         <tr>
-                            <td>Direcci&oacute;n:</td>
+                            <td>ISBN:</td>
                             <td>
-                                <input type="text" name="direccion" size="40" maxlength="60" required/>
+                                <input type="text" name="isbn" size="40" maxlength="15" required/>
                             </td>
-                            <td>Telefono:</td>
+                            <td>Disponible:</td>
                             <td>
-                                <input type="text" name="telefono" size="15" maxlength="15" required/>
+                                <select name="disponible" id="disponible">
+                                    <option value="1">S&iacute;</option>
+                                    <option value="0">No</option>
+                                </select>
                             </td>
                         </tr>
                     </tbody>

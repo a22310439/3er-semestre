@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Inicio</title>
+        <title>Bases de datos y MySQL - Agregar Usuario</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Inicio</h1>
+            <h1>Bases de datos y MySQL - Agregar Usuario</h1>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="usuarios.php">P&aacute;gina inicial</a></li>
+                <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
             </ul>
             <?php
                 include '../conexion.php';
@@ -22,18 +22,17 @@
                 }
 
                 //2.- obteniendo los datos del formulario
-                $clave = $_REQUEST["clave"];
                 $nombre = $_REQUEST["nombre"];
                 $direccion = $_REQUEST["direccion"];
                 $telefono = $_REQUEST["telefono"];
 
                 //validando los campos
-                if (isset($clave) && isset($nombre) && isset($direccion) &&
+                if (isset($nombre) && isset($direccion) &&
                 isset($telefono)) {
                     //creando la consulta
                     $sql = "INSERT INTO usuarios (clave, nombre, dir, telefono) "
                     .
-                    "VALUES ($clave, '$nombre', '$direccion', '$telefono')";
+                    "VALUES ('NULL', '$nombre', '$direccion', '$telefono')";
                     //echo $sql;
                     //4.- ejecutando la consulta
                     $result = $link->query($sql);

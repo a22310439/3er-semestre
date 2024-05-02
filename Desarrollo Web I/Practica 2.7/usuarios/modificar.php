@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Inicio</title>
+        <title>Bases de datos y MySQL - Modificar Usuario</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Inicio</h1>
+            <h1>Bases de datos y MySQL - Modificar Usuario</h1>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="usuarios.php">P&aacute;gina inicial</a></li>
+                <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
             </ul>
             <?php
                 include '../conexion.php';

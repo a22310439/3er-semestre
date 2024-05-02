@@ -2,20 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Listar Usuarios</title>
+        <title>Bases de datos y MySQL - Listar Libros</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Listar Usuarios</h1>
+            <h1>Bases de datos y MySQL - Listar Libros</h1>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
+                <li><a href="libros.html">P&aacute;gina inicial</a></li>
             </ul>
         </div>
         <div id="tabla">
-            <h2>Usuarios Registrados</h2>
+            <h2>Libros Registrados</h2>
             <?php
                 include '../conexion.php';
                 //1.- Conexión al servidor de bases de datos, interface OOP
@@ -25,14 +25,15 @@
                 }
 
                 //creando la consulta
-                $sql = "SELECT * FROM usuarios";
+                $sql = "SELECT * FROM libros";
 
                 echo "<table border='1'>
                     <tr>
-                    <td>Clave</td>
-                    <td>Nombre</td>
-                    <td>Dirección</td>
-                    <td>Teléfono</td>
+                    <td>ID</td>
+                    <td>ISBN</td>
+                    <td>T&iacute;tulo</td>
+                    <td>Autor</td>
+                    <td>Disponible</td>
                     <tr>";
 
                 if ($result = $link->query($sql)) {
@@ -41,7 +42,8 @@
                             <td>$row[0]</td>
                             <td>$row[1]</td>
                             <td>$row[2]</td>
-                            <td>$row[3]</td>
+                            <td>$row[3]</td>"
+                            . ($row[4] == 1 ? "<td>Si</td>" : "<td>No</td>") . "
                             <tr>";
                     }
                     $result->close();

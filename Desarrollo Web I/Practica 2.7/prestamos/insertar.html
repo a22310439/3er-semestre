@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Bases de datos y MySQL - Agregar Prestamo</title>
+        <link href="../styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="encabezado">
+            <h1>Bases de datos y MySQL - Agregar Prestamo</h1>
+        </div>
+        <div id="menu">
+        <ul>
+            <li><a href="prestamos.html">P&aacute;gina inicial</a></li>
+        </ul>
+        </div>
+        <div id="contenido">
+            <form action="insertar.php" method="get">
+                <p>Escriba los datos del nuevo registro:</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td align="right">ID Libro:</td>
+                            <td>
+                                <input type="number" name="idLibro" size="40" maxlength="10" required/>
+                            </td>
+                            <td align="right">ID Usuario:</td>
+                            <td>
+                                <input type="number" name="idUsuario" size="40" maxlength="40" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fecha de Prestamo:</td>
+                            <td>
+                                <input type="date" name="fechaPrestamo" size="40" maxlength="60" required/>
+                            </td>
+                            <td>Fecha de Entrega:</td>
+                            <td>
+                                <input type="date" name="fechaEntrega" size="40" maxlength="15"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Recargos:</td>
+                            <td>
+                                <input type="text" name="recargos" size="15" maxlength="10"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                <input type="submit" value="A&#241;adir" />
+                </p>
+            </form>
+        </div>
+        <div id="pie">
+            <h2>Todos los derechos reservados</h2>
+        </div>
+    </body>
+</html>

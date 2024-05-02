@@ -3,7 +3,7 @@ CREATE DATABASE biblio;
 USE biblio;
 drop table if exists biblio;
 CREATE TABLE `libros` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL auto_increment,
 `isbn` int(11) DEFAULT NULL,
 `titulo` varchar(50) DEFAULT NULL,
 `autor` varchar(50) DEFAULT NULL,
@@ -12,7 +12,7 @@ PRIMARY KEY (`id`)
 ) ;
 drop table if exists usuarios;
 CREATE TABLE `usuarios` (
-`clave` int(11) NOT NULL,
+`clave` int(11) NOT NULL auto_increment,
 `nombre` varchar(60) DEFAULT NULL,
 `dir` varchar(60) DEFAULT NULL,
 `telefono` varchar(15) DEFAULT NULL,
@@ -20,7 +20,7 @@ PRIMARY KEY (`clave`)
 );
 
 CREATE TABLE `prestamos` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL auto_increment,
 `claveLibro` int(11) DEFAULT NULL,
 `claveUsuario` int(11) DEFAULT NULL,
 `fechaPrestamo` date DEFAULT NULL,

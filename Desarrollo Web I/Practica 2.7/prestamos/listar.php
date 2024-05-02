@@ -2,20 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Bases de datos y MySQL - Listar Usuarios</title>
+        <title>Bases de datos y MySQL - Listar Prestamos</title>
         <link href="../styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="encabezado">
-            <h1>Bases de datos y MySQL - Listar Usuarios</h1>
+            <h1>Bases de datos y MySQL - Listar Prestamos</h1>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="usuarios.html">P&aacute;gina inicial</a></li>
+                <li><a href="prestamos.html">P&aacute;gina inicial</a></li>
             </ul>
         </div>
         <div id="tabla">
-            <h2>Usuarios Registrados</h2>
+            <h2>Pr&eacute;stamos Registrados</h2>
             <?php
                 include '../conexion.php';
                 //1.- Conexión al servidor de bases de datos, interface OOP
@@ -25,15 +25,17 @@
                 }
 
                 //creando la consulta
-                $sql = "SELECT * FROM usuarios";
+                $sql = "SELECT * FROM prestamos";
 
                 echo "<table border='1'>
                     <tr>
-                    <td>Clave</td>
-                    <td>Nombre</td>
-                    <td>Dirección</td>
-                    <td>Teléfono</td>
-                    <tr>";
+                    <td>ID</td>
+                    <td>ID Libro</td>
+                    <td>ID Usuario</td>
+                    <td>Fecha de Prestamo</td>
+                    <td>Fecha de Entrega</td>
+                    <td>Recargos</td>
+                    </tr>";
 
                 if ($result = $link->query($sql)) {
                     while ($row = $result->fetch_row()) {
@@ -42,6 +44,8 @@
                             <td>$row[1]</td>
                             <td>$row[2]</td>
                             <td>$row[3]</td>
+                            <td>$row[4]</td>
+                            <td>$row[5]</td>
                             <tr>";
                     }
                     $result->close();
