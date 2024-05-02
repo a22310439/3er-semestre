@@ -80,6 +80,6 @@ insert into productos(id, nombre, precio, unidadMedida, id_categoria, stock, sto
 insert into facturas values (1, '2024-05-02', 1, 500, 'Compra de 5 desarmadores'),
 (2, '2024-05-02', 1, 165, 'Compra de una pinza y un mazo');
 
-insert into detalles_fac values (1, 1, 1, 5),
+insert into detalles_fac values (1, 1, 1, 3),
 (2, 1, 2, 1),
-(3, 1, 3, 1);
+(3, 1, 3, 5);
