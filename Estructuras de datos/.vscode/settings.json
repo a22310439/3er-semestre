@@ -1,7 +1,7 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "xstring": "cpp",
+        "ostream": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
         "cctype": "cpp",
@@ -28,7 +28,6 @@
         "locale": "cpp",
         "memory": "cpp",
         "new": "cpp",
-        "ostream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "system_error": "cpp",
@@ -46,6 +45,7 @@
         "xlocnum": "cpp",
         "xloctime": "cpp",
         "xmemory": "cpp",
+        "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp"
     }
