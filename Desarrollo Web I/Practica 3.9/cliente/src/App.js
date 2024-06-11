@@ -1,26 +1,27 @@
 import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="header">
-        <ul className="menu">
-          <a href="http://localhost:3001"><img className="logo" src="imagenes/logo.png" alt="logo"/></a>
-          <li className="menu-item"><a href="#home">Home</a></li>
-          <li className="menu-item"><a href="#about">Sobre Nosotros</a></li>
-          <li className="menu-item"><a href="#contact">Contact</a></li>
-        </ul>
-      </header>
-      <section className="background-section">
-      </section>
-      <footer className="footer">
-        <p>© 2024 - Todos los derechos reservados</p>
-        <ul className="menu-footer">
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </footer>
-    </div>
+    <Router>
+      <div>
+        <Header title="Proyecto" />
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
