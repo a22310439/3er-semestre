@@ -232,8 +232,10 @@ body {
 /* Form styles */
 .form-container {
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   background: #fff;
   border-radius: 10px;
@@ -272,3 +274,148 @@ body {
   transition: transform 0.3s ease, background-color 0.3s;
 }
 
+/* Styles for PagAdmin */
+.admin-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.admin-container h1, .admin-container h2 {
+  text-align: center;
+}
+
+.user-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-list-header > div, .user-details > div {
+  flex: 1;
+  text-align: center; /* Center align text */
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-details > div {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.user-details input, .user-details select {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.user-actions button {
+  margin-left: 10px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-actions .edit-button {
+  background-color: #007BFF;
+}
+
+.user-actions .edit-button:hover {
+  background-color: #0056b3;
+}
+
+.user-actions .delete-button {
+  background-color: #ff4d4d;
+}
+
+.user-actions .delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.user-actions .cancel-button {
+  background-color: #6c757d;
+}
+
+.add-user-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-user-container > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.add-user-container > div:last-child {
+  margin-right: 0;
+}
+
+.add-user-container input, .add-user-container select, .add-user-container button {
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-sizing: border-box;
+  height: 50%;
+  margin-top: 15px;
+}
+
+.add-user-container button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.add-user-container button:hover {
+  background-color: #45a049;
+}

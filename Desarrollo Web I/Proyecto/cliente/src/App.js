@@ -10,25 +10,27 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './components/authContext';
-import ProtectedRoute from './components/protectedRoute';
+import { UserProvider } from './components/userContext';
 
 const App = () => {
   return (
     <AuthProvider>
-      <Router>
-        <div className="app-container">
-          <Header title="Proyecto" />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/pagAdmin" element={<ProtectedRoute role="admin"><PagAdmin /></ProtectedRoute>} />
-            <Route path="/pagUser" element={<ProtectedRoute role="user"><PagUser /></ProtectedRoute>} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
+      <UserProvider>
+        <Router>
+          <div className="app-container">
+            <Header title="Proyecto" />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/pagAdmin" element={<PagAdmin />} />
+              <Route path="/pagUser" element={<PagUser />} />
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
+      </UserProvider>
     </AuthProvider>
   );
 };
