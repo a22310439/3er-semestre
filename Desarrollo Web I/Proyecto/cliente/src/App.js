@@ -8,6 +8,8 @@ import PagAdmin from './pages/pagAdmin';
 import PagUser from './pages/pagUser';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Productos from './pages/Productos';
+import Servicios from './pages/Servicios';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './components/authContext';
 import { UserProvider } from './components/userContext';
@@ -21,11 +23,13 @@ const App = () => {
             <Header title="Proyecto" />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/sobrenosotros" element={<About />} />
+              <Route path="/contacto" element={<Contact />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/pagAdmin" element={<PagAdmin />} />
               <Route path="/pagUser" element={<PagUser />} />
+              <Route path="/productos" element={<Productos />} />
+              <Route path="/servicios" element={<Servicios />} />
             </Routes>
             <Footer />
           </div>

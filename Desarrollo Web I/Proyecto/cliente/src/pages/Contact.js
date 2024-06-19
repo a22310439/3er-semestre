@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="content">
       <h1>Contacto</h1>
-      <p>Estamos ubicados entre la secretaría de tránsito y el estadio Jalisco en la ciudad de Guadalajara, México.</p>
+      <p>Estamos ubicados entre la secretaría de tránsito y el estadio Jalisco en la ciudad de Guadalajara, Jalisco, México.</p>
       <p><strong>Dirección:</strong> Calle Aurelio González #2285, Jardines Alcalde, 44298</p>
       <p><strong>Teléfono:</strong> (333) 191-4694</p>
       <p><strong>Email:</strong> contacto@institutopuntoalejandria.com</p>

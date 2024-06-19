@@ -22,15 +22,24 @@ body {
   color: #ffffff;
 }
 
+.imagen-fondo h1 {
+  font-size: 3em;
+  font-weight: 700;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+
 .text-container {
   position: absolute;
-  top: 10%;
+  top: 90%;
   left: 60%;
   text-align: center;
+  transform: translate(-5%, 220%);
 }
 
 .text-container h2, .text-container h3 {
-  font-family:  "Lexend-Tera", sans-serif;
+  font-family: "Lexend-Tera", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
@@ -38,8 +47,25 @@ body {
   padding: 0;
 }
 
+.text-contactanos {
+  width: 100%;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  text-align: center;
+}
+
+.text-contactanos h3 {
+  font-size: 2em;
+}
+
+
 .header {
-  background-color: #FBE3AB;
+  background-color: #ffbfa1;
   display: flex;
   align-items: center;
   justify-content: space-between; /* Asegura que los elementos estén espaciados correctamente */
@@ -49,7 +75,7 @@ body {
 }
 
 .menu-container {
-  flex: 1;
+  flex: 2;
   display: flex;
   justify-content: center;
 }
@@ -78,8 +104,8 @@ body {
 
 .menu-item:hover {
   transform: scale(1.1);
-  background-color: #ffce5d;
-  border-color: #c58a00;
+  background-color: #ffa67d;
+  border-color: #ff8248;
 }
 
 .auth-container {
@@ -101,12 +127,12 @@ body {
 
 .auth-container a:hover, .auth-container button:hover {
   transform: scale(1.1);
-  background-color: #ffce5d;
-  border-color: #c58a00;
+  background-color: #ffa67d;
+  border-color: #ff854d;
 }
 
 .auth-container .signout-button {
-  background-color: #FBE3AB;
+  background-color: #ffbfa1;
   color: black;
   border: 1px solid transparent;
   padding: 10px 15px;
@@ -117,8 +143,8 @@ body {
 
 .auth-container .signout-button:hover {
   transform: scale(1.1);
-  background-color: #ffce5d;
-  border-color: #c58a00;
+  background-color: #ffa67d;
+  border-color: #ff9564;
 }
 
 .auth-button {
@@ -154,6 +180,35 @@ body {
 .content h1 {
   text-align: center;
 }
+
+.selector-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.selector-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #A4DDEA;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.selector-buttons button:hover {
+  background-color: #0dd3ff;
+}
+
+.section-content {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
 
 .footer {
   background-color: #A4DDEA;

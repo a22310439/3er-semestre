@@ -19,8 +19,10 @@ const Header = ({ title }) => {
       <div className="menu-container">
         <ul className="menu">
           <li className="menu-item"><Link to="/">Inicio</Link></li>
-          <li className="menu-item"><Link to="/about">Sobre Nosotros</Link></li>
-          <li className="menu-item"><Link to="/contact">Contacto</Link></li>
+          <li className="menu-item"><Link to="/sobrenosotros">Sobre Nosotros</Link></li>
+          <li className="menu-item"><Link to="/contacto">Contacto</Link></li>
+          <li className="menu-item"><Link to="/productos">Productos</Link></li>
+          <li className="menu-item"><Link to="/servicios">Servicios</Link></li>
         </ul>
       </div>
       <div className="auth-container">
