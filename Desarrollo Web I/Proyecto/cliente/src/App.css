@@ -16,9 +16,6 @@ body {
   background-size: cover;
   background-image: url('../public/imagenes/image.jpg');
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
 }
 
@@ -29,41 +26,6 @@ body {
   top: 3%;
   left: 3%;
 }
-
-.text-container {
-  position: absolute;
-  top: 90%;
-  left: 60%;
-  text-align: center;
-  transform: translate(-5%, 220%);
-}
-
-.text-container h2, .text-container h3 {
-  font-family: "Lexend-Tera", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-}
-
-.text-contactanos {
-  width: 100%;
-  font-size: 1em;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 70%;
-  left: 30%;
-  text-align: center;
-}
-
-.text-contactanos h3 {
-  font-size: 2em;
-}
-
-
 .header {
   background-color: #ffbfa1;
   display: flex;
@@ -177,10 +139,6 @@ body {
   text-align: justify;
 }
 
-.content h1 {
-  text-align: center;
-}
-
 .selector-buttons {
   display: flex;
   justify-content: center;
@@ -270,8 +228,8 @@ body {
 
 .text-container {
   position: absolute;
-  top: 10%;
-  left: 60%;
+  top: 26%;
+  left: 58%;
   text-align: center;
 }
 
@@ -282,6 +240,21 @@ body {
   font-style: normal;
   margin: 0;
   padding: 0;
+}
+
+.contactanos-container {
+  position: absolute;
+  top: 70%;
+  left: 65%;
+  text-align: center;
+}
+
+.contactanos-container h2 {
+  font-size: 2em;
+}
+
+.contactanos-container p {
+  size: 2em;
 }
 
 /* Form styles */

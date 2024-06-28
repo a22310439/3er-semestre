@@ -10,10 +10,10 @@ const Home = () => {
           <h2><strong>Impulsando líderes competentes</strong></h2>
           <h3>Formación es nuestra misión</h3>
         </div>
-        <div className='text-contactanos'>
-          <h3>¡Contáctanos!</h3>
-          <p>Teléfono: (33)3191-4694</p>
-          <p>Correo: contacto@institutopuntoalejandria.com</p>
+        <div className='contactanos-container'>
+          <h2><strong>¡Contáctanos!</strong></h2>
+          <p><strong>Teléfono: (33)3191 4694</strong></p>
+          <p><strong>Correo: contacto@institutopunntoalejandria.com</strong></p>
         </div>
       </div>
     </div>
